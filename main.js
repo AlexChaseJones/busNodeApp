@@ -84,7 +84,7 @@ var execute = {
 var busActions = {
 	full: 0,
 	addStudent: function(){
-		prompt2.get(schema, function(err, result){
+		prompt.get(schema, function(err, result){
 			if (busActions.full < 10) {
 				busActions.full++;
 				var newGuy = new student(result.name, result.gender, Number(result.grade), Number(result.GPA), Number(result.detentions), result.sleeping, result.phrase)
