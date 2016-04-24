@@ -1,6 +1,4 @@
 var prompt = require('prompt');
-var prompt2 = require('prompt');
-var prompt3 = require('prompt');
 var colors = require("colors/safe");
 var student = require('./student.js')
 var Bus = require('./bus.js')
@@ -8,8 +6,6 @@ var Bus = require('./bus.js')
 myBus = new Bus('Alexander', 'yellow', 'a lot');
 
 prompt.start();
-prompt2.start();
-prompt3.start();
 
 console.log('\nWelcome to your bus!\nIt\'s currently empty. What would you like to do?\n(Press enter to view commands)');
 
@@ -109,14 +105,14 @@ var busActions = {
 			console.log('The bus is empty.');
 			execute.action();
 		} else {
-			prompt3.get([{
+			prompt.get([{
 				name: 'student',
 				description: 'what is the student\'s name? (\'exit\' to exit)',
 				type: 'string'	
 			}], function(err, result) {
 				var found = false;
 				var target = result.student;
-				if (target == 'exit') {execute.action(); found=true;}
+				if (target == 'exit') {execute.action()};
 				for (var i = 0; i < myBus.studentsOnTheBus.length; i++) {
 					if(target.toLowerCase() == myBus.studentsOnTheBus[i].name.toLowerCase()) {
 						found = true;
